@@ -1,0 +1,868 @@
+{
+  "nav": {
+    "logo": "Sushmita Kc",
+    "logoImage": "https://picsum.photos/seed/Ready_to_Upload_01.png/1200/800",
+    "links": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "About",
+        "href": "/about"
+      },
+      {
+        "label": "Portfolio",
+        "href": "/portfolio"
+      },
+      {
+        "label": "Services",
+        "href": "/services"
+      },
+      {
+        "label": "Blog",
+        "href": "/blog"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      }
+    ]
+  },
+  "hero": {
+    "title": "Sushmita Kc",
+    "role": "Digital Marketing Specialist",
+    "subtitle": "Driving measurable growth through data-driven digital strategies",
+    "headline": "Driving Growth Through Digital Excellence",
+    "description": "I help ambitious brands turn audiences into customers with performance marketing, SEO, and conversion-focused strategy.",
+    "stats": [
+      {
+        "label": "Traffic Increase",
+        "value": "500",
+        "suffix": "%"
+      },
+      {
+        "label": "Campaigns Managed",
+        "value": "50",
+        "suffix": "+"
+      },
+      {
+        "label": "Revenue Generated",
+        "value": "2",
+        "suffix": "M+"
+      },
+      {
+        "label": "Avg. ROI Lift",
+        "value": "320",
+        "suffix": "%"
+      }
+    ],
+    "ctaPrimary": {
+      "label": "View Case Studies",
+      "href": "/portfolio"
+    },
+    "ctaSecondary": {
+      "label": "Get Free Audit",
+      "href": "/contact"
+    },
+    "image": "https://picsum.photos/seed/sushmita-hero/900/1100"
+  },
+  "about": {
+    "headline": "Digital Marketing Expert",
+    "bio": "I'm a results-obsessed Digital Marketing Specialist with 7+ years of experience building growth engines for brands across Brisbane, Australia and Kathmandu, Nepal. My approach blends creative storytelling with rigorous analytics to deliver campaigns that don't just look good — they perform.",
+    "philosophy": "Great marketing is a science and an art. I believe every dollar spent should be measurable, every channel should ladder up to a business goal, and every experiment should teach us something. I lead with data, but I never forget there's a human on the other side of the screen.",
+    "expertise": [
+      {
+        "title": "Performance Marketing",
+        "description": "Full-funnel paid media across Google, Meta, and LinkedIn engineered for ROAS.",
+        "icon": "rocket"
+      },
+      {
+        "title": "Brand Strategy",
+        "description": "Positioning, messaging, and identity that makes brands impossible to ignore.",
+        "icon": "compass"
+      },
+      {
+        "title": "Analytics & Attribution",
+        "description": "GA4, server-side tracking, and dashboards that tie spend to revenue.",
+        "icon": "chart"
+      },
+      {
+        "title": "Conversion Optimization",
+        "description": "CRO programs built on experimentation, not guesses.",
+        "icon": "target"
+      }
+    ],
+    "experience": [
+      {
+        "role": "Senior Digital Marketing Specialist",
+        "company": "GrowthLab Agency",
+        "duration": "2021 — Present",
+        "achievements": [
+          "Scaled paid media to $1.4M ARR for 12 clients",
+          "Lifted average client ROAS from 2.1x to 5.8x",
+          "Built the agency's analytics & attribution stack"
+        ]
+      },
+      {
+        "role": "Performance Marketing Manager",
+        "company": "Brisbane E-Commerce Co.",
+        "duration": "2019 — 2021",
+        "achievements": [
+          "Grew organic traffic 320% in 12 months",
+          "Launched lifecycle email program driving 28% of revenue",
+          "Reduced CAC by 41% through audience refinement"
+        ]
+      },
+      {
+        "role": "Digital Marketing Executive",
+        "company": "Kathmandu Tech Ventures",
+        "duration": "2017 — 2019",
+        "achievements": [
+          "Managed 50+ multi-channel campaigns",
+          "Increased lead volume 210% YoY",
+          "Established the company's first content engine"
+        ]
+      }
+    ],
+    "certifications": [
+      "Google Ads Certified",
+      "Google Analytics (GA4) Certified",
+      "Meta Blueprint Certified",
+      "HubSpot Inbound Certified",
+      "SEMrush SEO Toolkit Certified",
+      "Microsoft Advertising Certified"
+    ],
+    "tools": [
+      "Google Analytics 4",
+      "Google Ads",
+      "Meta Ads Manager",
+      "SEMrush",
+      "Ahrefs",
+      "Hotjar",
+      "Mailchimp",
+      "Klaviyo",
+      "Hootsuite",
+      "Looker Studio",
+      "Tag Manager",
+      "Webflow"
+    ]
+  },
+  "services": [
+    {
+      "slug": "seo-audit-strategy",
+      "title": "SEO Audit & Strategy",
+      "description": "Technical and content SEO that compounds. Rank higher, earn trust, and capture demand.",
+      "icon": "search",
+      "price": "$1,200",
+      "priceNote": "one-time audit + 3-month roadmap",
+      "features": [
+        "Full technical SEO audit",
+        "Keyword & intent mapping",
+        "Content gap analysis",
+        "Link building strategy",
+        "Monthly performance report"
+      ],
+      "deliverables": [
+        "Audit document (40+ pages)",
+        "Prioritized fix list",
+        "Keyword universe",
+        "90-day action plan"
+      ],
+      "timeline": "2–3 weeks"
+    },
+    {
+      "slug": "google-ads-management",
+      "title": "Google Ads Management",
+      "description": "Profit-focused search, shopping, and YouTube campaigns managed end-to-end.",
+      "icon": "google",
+      "price": "$1,500",
+      "priceNote": "per month + ad spend",
+      "features": [
+        "Campaign build & structuring",
+        "Conversion tracking setup",
+        "Bid & budget optimization",
+        "Creative testing",
+        "Weekly performance syncs"
+      ],
+      "deliverables": [
+        "Live campaigns",
+        "Tracking plan",
+        "Monthly report",
+        "Quarterly strategy review"
+      ],
+      "timeline": "Ongoing"
+    },
+    {
+      "slug": "social-media-management",
+      "title": "Social Media Management",
+      "description": "Scroll-stopping content and community building across Meta, LinkedIn, and TikTok.",
+      "icon": "share",
+      "price": "$1,100",
+      "priceNote": "per month",
+      "features": [
+        "Content calendar",
+        "12–20 posts / month",
+        "Community management",
+        "Paid social boost",
+        "Monthly insights"
+      ],
+      "deliverables": [
+        "Branded content",
+        "Reels / shorts",
+        "Engagement reports"
+      ],
+      "timeline": "Ongoing"
+    },
+    {
+      "slug": "content-marketing",
+      "title": "Content Marketing",
+      "description": "SEO-led content that builds authority and nurtures buyers through the funnel.",
+      "icon": "pen",
+      "price": "$900",
+      "priceNote": "per month (4 articles)",
+      "features": [
+        "Editorial strategy",
+        "Long-form articles",
+        "On-page SEO",
+        "Distribution plan",
+        "Performance tracking"
+      ],
+      "deliverables": [
+        "Content calendar",
+        "Published articles",
+        "Quarterly content audit"
+      ],
+      "timeline": "Ongoing"
+    },
+    {
+      "slug": "email-marketing-automation",
+      "title": "Email Marketing Automation",
+      "description": "Lifecycle flows and campaigns that turn one-time buyers into loyal fans.",
+      "icon": "mail",
+      "price": "$800",
+      "priceNote": "per month",
+      "features": [
+        "Flow architecture",
+        "Segmentation",
+        "A/B testing",
+        "Deliverability monitoring",
+        "Revenue attribution"
+      ],
+      "deliverables": [
+        "Automation flows",
+        "Campaign calendar",
+        "Revenue dashboard"
+      ],
+      "timeline": "2 weeks setup + ongoing"
+    },
+    {
+      "slug": "analytics-reporting",
+      "title": "Analytics & Reporting",
+      "description": "A single source of truth connecting every channel to revenue.",
+      "icon": "chart",
+      "price": "$700",
+      "priceNote": "per month",
+      "features": [
+        "GA4 & server-side setup",
+        "Dashboard build",
+        "Attribution modeling",
+        "Monthly deep-dive",
+        "Board-ready decks"
+      ],
+      "deliverables": [
+        "Live dashboard",
+        "Insight memos",
+        "Quarterly review"
+      ],
+      "timeline": "2 weeks setup + ongoing"
+    }
+  ],
+  "portfolio": [
+    {
+      "slug": "ecommerce-seo-turnaround",
+      "title": "E-Commerce SEO Turnaround",
+      "category": "SEO",
+      "client": "Aurora Living",
+      "industry": "Home & Lifestyle E-Commerce",
+      "challenge": "A beautiful store with almost zero organic visibility. Category pages were cannibalizing each other and technical debt was throttling crawl budget.",
+      "strategy": "We rebuilt the site architecture, launched a topical content hub, and fixed 240+ technical issues. A digital PR push earned 38 high-authority backlinks in 4 months.",
+      "results": {
+        "trafficGrowth": "412%",
+        "conversionRate": "+68%",
+        "roi": "640%",
+        "revenue": "$1.2M"
+      },
+      "metrics": [
+        {
+          "label": "Organic Sessions",
+          "value": "412%",
+          "before": "8.2K",
+          "after": "41.9K"
+        },
+        {
+          "label": "Conversion Rate",
+          "value": "+68%",
+          "before": "1.1%",
+          "after": "1.85%"
+        },
+        {
+          "label": "Revenue from SEO",
+          "value": "$1.2M",
+          "before": "$180K",
+          "after": "$1.2M"
+        }
+      ],
+      "chartData": [
+        {
+          "label": "Jan",
+          "before": 8,
+          "after": 9
+        },
+        {
+          "label": "Mar",
+          "before": 8,
+          "after": 15
+        },
+        {
+          "label": "May",
+          "before": 8,
+          "after": 24
+        },
+        {
+          "label": "Jul",
+          "before": 8,
+          "after": 33
+        },
+        {
+          "label": "Sep",
+          "before": 8,
+          "after": 38
+        },
+        {
+          "label": "Nov",
+          "before": 8,
+          "after": 42
+        }
+      ],
+      "publishedDate": "2025-09-12",
+      "featuredImage": "https://picsum.photos/seed/aurora-seo/1200/800",
+      "testimonial": {
+        "quote": "Sushmita turned our website into our #1 sales channel. The ROI speaks for itself.",
+        "name": "Maya Thompson",
+        "role": "Founder, Aurora Living"
+      },
+      "excerpt": "How a technical SEO reset and content hub grew organic revenue from $180K to $1.2M in under a year."
+    },
+    {
+      "slug": "saas-google-ads-scale",
+      "title": "SaaS Google Ads Scale",
+      "category": "PPC",
+      "client": "PipelineCRM",
+      "industry": "B2B SaaS",
+      "challenge": "Rising CPCs and a ROAS that couldn't support aggressive growth targets. The account was broad, unfocused, and bleeding budget.",
+      "strategy": "We restructured into tightly themed campaigns, implemented value-based bidding, and built a server-side offline conversion import from the CRM.",
+      "results": {
+        "trafficGrowth": "3.1x",
+        "conversionRate": "+92%",
+        "roi": "580%",
+        "revenue": "$2.4M"
+      },
+      "metrics": [
+        {
+          "label": "Monthly Ad Spend",
+          "value": "Efficient",
+          "before": "$42K",
+          "after": "$61K"
+        },
+        {
+          "label": "ROAS",
+          "value": "5.8x",
+          "before": "2.1x",
+          "after": "5.8x"
+        },
+        {
+          "label": "Pipeline Generated",
+          "value": "$2.4M",
+          "before": "$620K",
+          "after": "$2.4M"
+        }
+      ],
+      "chartData": [
+        {
+          "label": "Q1",
+          "before": 0.6,
+          "after": 0.7
+        },
+        {
+          "label": "Q2",
+          "before": 0.6,
+          "after": 1.2
+        },
+        {
+          "label": "Q3",
+          "before": 0.6,
+          "after": 1.9
+        },
+        {
+          "label": "Q4",
+          "before": 0.6,
+          "after": 2.4
+        }
+      ],
+      "publishedDate": "2025-07-30",
+      "featuredImage": "https://picsum.photos/seed/pipeline-ppc/1200/800",
+      "testimonial": {
+        "quote": "Best ROI we've ever seen from paid. Sushmita understands the math behind growth.",
+        "name": "Daniel Reyes",
+        "role": "VP Growth, PipelineCRM"
+      },
+      "excerpt": "Value-based bidding and CRM integration took this SaaS account from 2.1x to 5.8x ROAS."
+    },
+    {
+      "slug": "fitness-brand-social-launch",
+      "title": "Fitness Brand Social Launch",
+      "category": "Social Media",
+      "client": "Volt Athletics",
+      "industry": "Sports & Apparel",
+      "challenge": "A new DTC brand with no audience and a crowded market dominated by legacy players.",
+      "strategy": "A creator-led TikTok + Instagram strategy with weekly Reels, UGC challenges, and micro-influencer seeding.",
+      "results": {
+        "trafficGrowth": "260%",
+        "conversionRate": "+44%",
+        "roi": "410%",
+        "revenue": "$680K"
+      },
+      "metrics": [
+        {
+          "label": "Followers (90 days)",
+          "value": "112K",
+          "before": "0",
+          "after": "112K"
+        },
+        {
+          "label": "Engagement Rate",
+          "value": "8.4%",
+          "before": "—",
+          "after": "8.4%"
+        },
+        {
+          "label": "Social Revenue",
+          "value": "$680K",
+          "before": "$0",
+          "after": "$680K"
+        }
+      ],
+      "chartData": [
+        {
+          "label": "W1",
+          "before": 0,
+          "after": 4
+        },
+        {
+          "label": "W4",
+          "before": 0,
+          "after": 21
+        },
+        {
+          "label": "W8",
+          "before": 0,
+          "after": 58
+        },
+        {
+          "label": "W12",
+          "before": 0,
+          "after": 112
+        }
+      ],
+      "publishedDate": "2025-06-18",
+      "featuredImage": "https://picsum.photos/seed/volt-social/1200/800",
+      "testimonial": {
+        "quote": "We sold out our first drop because of the community Sushmita built.",
+        "name": "Priya Sharma",
+        "role": "Co-Founder, Volt Athletics"
+      },
+      "excerpt": "A creator-led launch that took a brand from zero to 112K followers and $680K in 90 days."
+    },
+    {
+      "slug": "b2b-content-engine",
+      "title": "B2B Content Engine",
+      "category": "Content",
+      "client": "NorthPeak Consulting",
+      "industry": "Professional Services",
+      "challenge": "Thought leaders with no content system. Inconsistent posting, no SEO, and no lead capture.",
+      "strategy": "Built an editorial engine around bottom-funnel pain points, paired with gated assets and nurturing sequences.",
+      "results": {
+        "trafficGrowth": "318%",
+        "conversionRate": "+55%",
+        "roi": "390%",
+        "revenue": "$540K"
+      },
+      "metrics": [
+        {
+          "label": "Blog Sessions",
+          "value": "318%",
+          "before": "6K",
+          "after": "25K"
+        },
+        {
+          "label": "Leads / mo",
+          "value": "+240%",
+          "before": "32",
+          "after": "109"
+        },
+        {
+          "label": "Attributed Revenue",
+          "value": "$540K",
+          "before": "$110K",
+          "after": "$540K"
+        }
+      ],
+      "chartData": [
+        {
+          "label": "M1",
+          "before": 6,
+          "after": 7
+        },
+        {
+          "label": "M3",
+          "before": 6,
+          "after": 12
+        },
+        {
+          "label": "M6",
+          "before": 6,
+          "after": 19
+        },
+        {
+          "label": "M9",
+          "before": 6,
+          "after": 25
+        }
+      ],
+      "publishedDate": "2025-05-02",
+      "featuredImage": "https://picsum.photos/seed/northpeak-content/1200/800",
+      "testimonial": {
+        "quote": "Our content finally sounds like us — and it brings in real pipeline.",
+        "name": "James O'Connor",
+        "role": "Managing Partner, NorthPeak"
+      },
+      "excerpt": "An editorial system that grew blog traffic 318% and attributed $540K in pipeline."
+    },
+    {
+      "slug": "ecommerce-email-lifecycle",
+      "title": "E-Commerce Email Lifecycle",
+      "category": "Email",
+      "client": "Bloom & Co.",
+      "industry": "Beauty & Skincare",
+      "challenge": "A single weekly newsletter driving <5% of revenue with no automation or segmentation.",
+      "strategy": "Architected 9 lifecycle flows (welcome, browse, cart, win-back) and a segmented campaign calendar.",
+      "results": {
+        "trafficGrowth": "180%",
+        "conversionRate": "+73%",
+        "roi": "1120%",
+        "revenue": "$910K"
+      },
+      "metrics": [
+        {
+          "label": "Email Revenue Share",
+          "value": "38%",
+          "before": "5%",
+          "after": "38%"
+        },
+        {
+          "label": "Flow Revenue",
+          "value": "$910K",
+          "before": "$60K",
+          "after": "$910K"
+        },
+        {
+          "label": "List Growth",
+          "value": "+160%",
+          "before": "12K",
+          "after": "31K"
+        }
+      ],
+      "chartData": [
+        {
+          "label": "Q1",
+          "before": 60,
+          "after": 120
+        },
+        {
+          "label": "Q2",
+          "before": 60,
+          "after": 410
+        },
+        {
+          "label": "Q3",
+          "before": 60,
+          "after": 720
+        },
+        {
+          "label": "Q4",
+          "before": 60,
+          "after": 910
+        }
+      ],
+      "publishedDate": "2025-03-21",
+      "featuredImage": "https://picsum.photos/seed/bloom-email/1200/800",
+      "testimonial": {
+        "quote": "Email became our most profitable channel overnight. The flows pay for themselves.",
+        "name": "Elena Rossi",
+        "role": "Head of E-Comm, Bloom & Co."
+      },
+      "excerpt": "Nine lifecycle flows that lifted email from 5% to 38% of total revenue."
+    },
+    {
+      "slug": "fintech-brand-repositioning",
+      "title": "Fintech Brand Repositioning",
+      "category": "Brand Strategy",
+      "client": "Ledgerly",
+      "industry": "Financial Technology",
+      "challenge": "A confusing brand that spoke to everyone and resonated with no one. Low trust, high churn.",
+      "strategy": "Repositioned around a single bold promise, rewrote messaging architecture, and redesigned the funnel.",
+      "results": {
+        "trafficGrowth": "145%",
+        "conversionRate": "+61%",
+        "roi": "470%",
+        "revenue": "$1.1M"
+      },
+      "metrics": [
+        {
+          "label": "Trial Signups",
+          "value": "145%",
+          "before": "1.4K",
+          "after": "3.4K"
+        },
+        {
+          "label": "Trial→Paid",
+          "value": "+61%",
+          "before": "11%",
+          "after": "17.7%"
+        },
+        {
+          "label": "Revenue",
+          "value": "$1.1M",
+          "before": "$380K",
+          "after": "$1.1M"
+        }
+      ],
+      "chartData": [
+        {
+          "label": "Pre",
+          "before": 1.4,
+          "after": 1.5
+        },
+        {
+          "label": "T1",
+          "before": 1.4,
+          "after": 2.1
+        },
+        {
+          "label": "T2",
+          "before": 1.4,
+          "after": 2.9
+        },
+        {
+          "label": "T3",
+          "before": 1.4,
+          "after": 3.4
+        }
+      ],
+      "publishedDate": "2025-02-10",
+      "featuredImage": "https://picsum.photos/seed/ledgerly-brand/1200/800",
+      "testimonial": {
+        "quote": "Sushmita found our voice. Our positioning finally makes sense to customers.",
+        "name": "Tom Becker",
+        "role": "CEO, Ledgerly"
+      },
+      "excerpt": "A repositioning that lifted trial signups 145% and more than doubled revenue."
+    }
+  ],
+  "blog": [
+    {
+      "slug": "roas-over-revenue",
+      "title": "Why ROAS Is Lying to You (And What to Track Instead)",
+      "excerpt": "Return on ad spend hides more than it reveals. Here's the profit-first metric stack I use with every client.",
+      "content": "Most marketers optimize for ROAS because it's easy. But ROAS ignores margin, LTV, and the timing of revenue. In this deep dive I break down value-based bidding, contribution margin, and how to wire your CRM into Google Ads so the algorithm optimizes for profit, not vanity.\n\nThe short version: track contribution margin per channel, not blended ROAS. Set up offline conversion imports. And stop celebrating a 5x ROAS on a product that ships at a loss.",
+      "publishedDate": "2025-10-01",
+      "readTime": "7 min read",
+      "category": "PPC",
+      "featuredImage": "https://picsum.photos/seed/blog-roas/1200/800",
+      "author": "Sushmita Kc"
+    },
+    {
+      "slug": "ga4-attribution-myths",
+      "title": "5 GA4 Attribution Myths Costing You Budget",
+      "excerpt": "Last-click is dead, but the replacements come with traps. Let's separate signal from noise.",
+      "content": "GA4's data-driven attribution is powerful, but it's not magic. I cover the five most common misinterpretations — from ignoring cross-device lag to over-trusting modeled conversions — and how to build a dashboard your CFO will actually believe.",
+      "publishedDate": "2025-09-15",
+      "readTime": "6 min read",
+      "category": "Analytics",
+      "featuredImage": "https://picsum.photos/seed/blog-ga4/1200/800",
+      "author": "Sushmita Kc"
+    },
+    {
+      "slug": "content-clusters-that-rank",
+      "title": "Content Clusters That Actually Rank in 2025",
+      "excerpt": "Topic clusters aren't new — but most brands build them backwards. Here's the corrected blueprint.",
+      "content": "Pillar pages fail when they're too broad. I show how to size a pillar, choose supporting spokes, and interlink in a way that compounds authority. Includes a real teardown of a cluster that grew from zero to 41K sessions.",
+      "publishedDate": "2025-08-22",
+      "readTime": "9 min read",
+      "category": "SEO",
+      "featuredImage": "https://picsum.photos/seed/blog-clusters/1200/800",
+      "author": "Sushmita Kc"
+    },
+    {
+      "slug": "social-algorithms-2025",
+      "title": "The 2025 Social Algorithm Playbook",
+      "excerpt": "What changed, what didn't, and how to build a content system that survives the next update.",
+      "content": "Algorithms rewarded consistency and watch-time this year. I share the posting cadence, format mix, and creator-leverage strategy that took a client to 112K followers in 90 days.",
+      "publishedDate": "2025-07-09",
+      "readTime": "5 min read",
+      "category": "Social Media",
+      "featuredImage": "https://picsum.photos/seed/blog-social/1200/800",
+      "author": "Sushmita Kc"
+    },
+    {
+      "slug": "positioning-first",
+      "title": "Positioning First: Strategy Before Tactics",
+      "excerpt": "Tactics without strategy are just expensive noise. A framework for finding your one bold promise.",
+      "content": "Before you touch a single ad, you need a position. I walk through the messaging architecture I used to reposition a fintech and lift trial-to-paid by 61%.",
+      "publishedDate": "2025-06-03",
+      "readTime": "8 min read",
+      "category": "Strategy",
+      "featuredImage": "https://picsum.photos/seed/blog-positioning/1200/800",
+      "author": "Sushmita Kc"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Sushmita turned our website into our #1 sales channel. The ROI speaks for itself.",
+      "name": "Maya Thompson",
+      "role": "Founder",
+      "company": "Aurora Living",
+      "avatar": "https://i.pravatar.cc/150?img=47",
+      "rating": 5
+    },
+    {
+      "quote": "Best ROI we've ever seen from paid. She understands the math behind growth.",
+      "name": "Daniel Reyes",
+      "role": "VP Growth",
+      "company": "PipelineCRM",
+      "avatar": "https://i.pravatar.cc/150?img=12",
+      "rating": 5
+    },
+    {
+      "quote": "We sold out our first drop because of the community she built.",
+      "name": "Priya Sharma",
+      "role": "Co-Founder",
+      "company": "Volt Athletics",
+      "avatar": "https://i.pravatar.cc/150?img=32",
+      "rating": 5
+    },
+    {
+      "quote": "Our content finally sounds like us — and it brings in real pipeline.",
+      "name": "James O'Connor",
+      "role": "Managing Partner",
+      "company": "NorthPeak",
+      "avatar": "https://i.pravatar.cc/150?img=15",
+      "rating": 5
+    },
+    {
+      "quote": "Email became our most profitable channel overnight. The flows pay for themselves.",
+      "name": "Elena Rossi",
+      "role": "Head of E-Comm",
+      "company": "Bloom & Co.",
+      "avatar": "https://i.pravatar.cc/150?img=20",
+      "rating": 5
+    }
+  ],
+  "clients": [
+    {
+      "name": "Aurora Living",
+      "logo": "https://picsum.photos/seed/logo-aurora/300/120"
+    },
+    {
+      "name": "PipelineCRM",
+      "logo": "https://picsum.photos/seed/logo-pipeline/300/120"
+    },
+    {
+      "name": "Volt Athletics",
+      "logo": "https://picsum.photos/seed/logo-volt/300/120"
+    },
+    {
+      "name": "NorthPeak",
+      "logo": "https://picsum.photos/seed/logo-northpeak/300/120"
+    },
+    {
+      "name": "Bloom & Co.",
+      "logo": "https://picsum.photos/seed/logo-bloom/300/120"
+    },
+    {
+      "name": "Ledgerly",
+      "logo": "https://picsum.photos/seed/logo-ledgerly/300/120"
+    }
+  ],
+  "process": [
+    {
+      "step": "01",
+      "title": "Discovery",
+      "description": "Deep-dive into your data, audience, and competitive landscape to find the leverage points.",
+      "icon": "search"
+    },
+    {
+      "step": "02",
+      "title": "Strategy",
+      "description": "A channel plan and measurement model mapped to concrete revenue goals.",
+      "icon": "compass"
+    },
+    {
+      "step": "03",
+      "title": "Execution",
+      "description": "Campaigns, content, and creatives launched and iterated against live performance.",
+      "icon": "rocket"
+    },
+    {
+      "step": "04",
+      "title": "Results",
+      "description": "Transparent reporting, experimentation, and continuous optimization for compounding growth.",
+      "icon": "target"
+    }
+  ],
+  "contact": {
+    "email": "kcsusmita.australia@gmail.com",
+    "phone": "+61 483 959 765",
+    "location": "Brisbane, Australia / Kathmandu, Nepal",
+    "socials": [
+      {
+        "platform": "LinkedIn",
+        "url": "https://linkedin.com/in/sushmita-kc",
+        "icon": "linkedin"
+      },
+      {
+        "platform": "Instagram",
+        "url": "https://instagram.com/sushmita.kc",
+        "icon": "instagram"
+      },
+      {
+        "platform": "Twitter",
+        "url": "https://twitter.com/sushmita_kc",
+        "icon": "twitter"
+      },
+      {
+        "platform": "Email",
+        "url": "mailto:kcsusmita.australia@gmail.com",
+        "icon": "mail"
+      }
+    ]
+  },
+  "contactPage": {
+    "eyebrow": "Contact",
+    "title": "Let's build your growth engine",
+    "description": "Tell me about your goals and I'll come back with a free, no-obligation audit and a plan to hit them.",
+    "auditTitle": "Get a free audit",
+    "auditDescription": "Not ready for a call? Request a free audit and I'll send a personalised teardown of your funnel plus three quick wins you can ship this week."
+  }
+}
