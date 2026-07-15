@@ -9,6 +9,7 @@ import type {
   Category,
   ChartPoint,
   Metric,
+  Service,
   SiteContent,
 } from "@/lib/types";
 import { formatDate } from "@/lib/utils";
@@ -26,6 +27,29 @@ const CATEGORIES: Category[] = [
 ];
 
 const BLOG_CATEGORIES = ["SEO", "PPC", "Social Media", "Analytics", "Strategy"] as const;
+
+const ICON_OPTIONS = [
+  "rocket",
+  "compass",
+  "chart",
+  "target",
+  "search",
+  "google",
+  "share",
+  "pen",
+  "mail",
+  "phone",
+  "star",
+  "sparkles",
+  "globe",
+  "trophy",
+  "users",
+  "calendar",
+  "trending",
+  "quote",
+  "external",
+  "map",
+];
 
 interface SubmissionRow {
   id: string;
@@ -258,10 +282,11 @@ function ContentManager({
   onSave: (next: SiteContent) => void;
   saving: boolean;
 }) {
-  const [modal, setModal] = useState<null | { kind: "case" | "blog"; index: number | null }>(null);
+  const [modal, setModal] = useState<null | { kind: "case" | "blog" | "service"; index: number | null }>(null);
 
   const editCase = (index: number | null) => setModal({ kind: "case", index });
   const editBlog = (index: number | null) => setModal({ kind: "blog", index });
+  const editService = (index: number | null) => setModal({ kind: "service", index });
 
   const handleCaseSave = (study: CaseStudy) => {
     const list = [...content.portfolio];
@@ -279,10 +304,20 @@ function ContentManager({
     setModal(null);
   };
 
+  const handleServiceSave = (svc: Service) => {
+    const list = [...content.services];
+    if (modal?.index !== null && modal?.index !== undefined) list[modal.index] = svc;
+    else list.push(svc);
+    onChange("services", list);
+    setModal(null);
+  };
+
   const removeCase = (i: number) =>
     onChange("portfolio", content.portfolio.filter((_, idx) => idx !== i));
   const removeBlog = (i: number) =>
     onChange("blog", content.blog.filter((_, idx) => idx !== i));
+  const removeService = (i: number) =>
+    onChange("services", content.services.filter((_, idx) => idx !== i));
 
   return (
     <div className="flex flex-col gap-8">
@@ -401,6 +436,38 @@ function ContentManager({
       </section>
 
       <section className="card p-6">
+        <div className="flex items-center justify-between">
+          <h2 className="font-display text-xl font-semibold">Services ({content.services.length})</h2>
+          <button onClick={() => editService(null)} className="gradient-bg rounded-full px-4 py-2 text-sm font-semibold text-white">
+            + Add service
+          </button>
+        </div>
+        <div className="mt-4 overflow-hidden rounded-xl border border-charcoal/10">
+          <table className="w-full text-sm">
+            <thead className="bg-cream-100 text-left text-charcoal/55">
+              <tr>
+                <th className="px-4 py-3">Title</th>
+                <th className="px-4 py-3">Price</th>
+                <th className="px-4 py-3 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {content.services.map((s, i) => (
+                <tr key={s.slug} className="border-t border-charcoal/10">
+                  <td className="px-4 py-3 font-medium">{s.title}</td>
+                  <td className="px-4 py-3 text-charcoal/70">{s.price}</td>
+                  <td className="px-4 py-3 text-right">
+                    <button onClick={() => editService(i)} className="text-teal hover:underline">Edit</button>
+                    <button onClick={() => removeService(i)} className="ml-3 text-red-600 hover:underline">Delete</button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="card p-6">
         <h2 className="font-display text-xl font-semibold">Contact Page &amp; Free Audit</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <Field label="Header eyebrow">
@@ -480,6 +547,13 @@ function ContentManager({
           initial={modal.index !== null ? content.blog[modal.index] : null}
           onClose={() => setModal(null)}
           onSave={handleBlogSave}
+        />
+      )}
+      {modal?.kind === "service" && (
+        <ServiceModal
+          initial={modal.index !== null ? content.services[modal.index] : null}
+          onClose={() => setModal(null)}
+          onSave={handleServiceSave}
         />
       )}
     </div>
@@ -667,6 +741,99 @@ function BlogModal({
       <Field label="Content (separate paragraphs with blank lines)">
         <textarea className="input resize-none" rows={8} value={form.content} onChange={(e) => set("content", e.target.value)} />
       </Field>
+      <ModalActions onClose={onClose} onSubmit={submit} />
+    </ModalShell>
+  );
+}
+
+function ServiceModal({
+  initial,
+  onClose,
+  onSave,
+}: {
+  initial: Service | null;
+  onClose: () => void;
+  onSave: (s: Service) => void;
+}) {
+  const [form, setForm] = useState<Service>(
+    initial ?? {
+      slug: "",
+      title: "",
+      description: "",
+      icon: "rocket",
+      price: "",
+      priceNote: "",
+      features: [],
+      deliverables: [],
+      timeline: "",
+    }
+  );
+  const set = <K extends keyof Service>(k: K, v: Service[K]) =>
+    setForm((f) => ({ ...f, [k]: v }));
+
+  const editList = (key: "features" | "deliverables", i: number, val: string) =>
+    setForm((f) => ({ ...f, [key]: f[key].map((x, idx) => (idx === i ? val : x)) }));
+  const addList = (key: "features" | "deliverables") =>
+    setForm((f) => ({ ...f, [key]: [...f[key], ""] }));
+  const removeList = (key: "features" | "deliverables", i: number) =>
+    setForm((f) => ({ ...f, [key]: f[key].filter((_, idx) => idx !== i) }));
+
+  const submit = () => onSave({ ...form, slug: form.slug || slugFrom(form.title) });
+
+  return (
+    <ModalShell title={initial ? "Edit Service" : "New Service"} onClose={onClose}>
+      <div className="grid gap-4 sm:grid-cols-2">
+        <Field label="Title"><input className="input" value={form.title} onChange={(e) => set("title", e.target.value)} /></Field>
+        <Field label="Icon">
+          <select className="input" value={form.icon} onChange={(e) => set("icon", e.target.value)}>
+            {ICON_OPTIONS.map((ic) => <option key={ic} value={ic}>{ic}</option>)}
+          </select>
+        </Field>
+        <Field label="Slug (optional)" className="sm:col-span-2">
+          <input className="input" placeholder="auto-generated from title" value={form.slug} onChange={(e) => set("slug", e.target.value)} />
+        </Field>
+      </div>
+
+      <Field label="Description"><textarea className="input resize-none" rows={3} value={form.description} onChange={(e) => set("description", e.target.value)} /></Field>
+
+      <div className="grid gap-4 sm:grid-cols-3">
+        <Field label="Price"><input className="input" placeholder="$1,200" value={form.price} onChange={(e) => set("price", e.target.value)} /></Field>
+        <Field label="Price note"><input className="input" placeholder="/ month" value={form.priceNote} onChange={(e) => set("priceNote", e.target.value)} /></Field>
+        <Field label="Timeline"><input className="input" placeholder="4–6 weeks" value={form.timeline} onChange={(e) => set("timeline", e.target.value)} /></Field>
+      </div>
+
+      <div>
+        <div className="mb-2 flex items-center justify-between">
+          <h4 className="text-sm font-semibold">Features</h4>
+          <button type="button" onClick={() => addList("features")} className="text-xs font-semibold text-teal">+ Add</button>
+        </div>
+        <div className="flex flex-col gap-2">
+          {form.features.map((f, i) => (
+            <div key={i} className="flex gap-1">
+              <input className="input" placeholder="Feature" value={f} onChange={(e) => editList("features", i, e.target.value)} />
+              <button type="button" onClick={() => removeList("features", i)} className="px-2 text-red-600">×</button>
+            </div>
+          ))}
+          {form.features.length === 0 && <p className="text-xs text-charcoal/45">No features yet.</p>}
+        </div>
+      </div>
+
+      <div>
+        <div className="mb-2 flex items-center justify-between">
+          <h4 className="text-sm font-semibold">Deliverables</h4>
+          <button type="button" onClick={() => addList("deliverables")} className="text-xs font-semibold text-teal">+ Add</button>
+        </div>
+        <div className="flex flex-col gap-2">
+          {form.deliverables.map((d, i) => (
+            <div key={i} className="flex gap-1">
+              <input className="input" placeholder="Deliverable" value={d} onChange={(e) => editList("deliverables", i, e.target.value)} />
+              <button type="button" onClick={() => removeList("deliverables", i)} className="px-2 text-red-600">×</button>
+            </div>
+          ))}
+          {form.deliverables.length === 0 && <p className="text-xs text-charcoal/45">No deliverables yet.</p>}
+        </div>
+      </div>
+
       <ModalActions onClose={onClose} onSubmit={submit} />
     </ModalShell>
   );
