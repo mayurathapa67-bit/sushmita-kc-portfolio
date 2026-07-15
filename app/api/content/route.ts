@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { AUTH_COOKIE, verifySession } from "@/lib/auth";
-import { getContentSync, getContent } from "@/lib/content";
-import { writeContent } from "@/lib/store";
+import { getContent, saveContent } from "@/lib/content";
 import type { SiteContent } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -25,19 +24,18 @@ export async function PUT(req: NextRequest) {
     return NextResponse.json({ error: "Invalid content" }, { status: 400 });
   }
 
-  const current = getContentSync();
+  const current = await getContent();
   const merged: SiteContent = { ...current, ...(body as Partial<SiteContent>) };
 
-  try {
-    writeContent(merged);
-  } catch {
+  const status = await saveContent(merged);
+  if (status === "failed") {
     return NextResponse.json(
       { error: "Could not persist content on this environment" },
       { status: 500 }
     );
   }
   return NextResponse.json(
-    { ok: true },
+    { ok: true, persisted: status },
     { headers: { "Cache-Control": "no-store, max-age=0" } }
   );
 }

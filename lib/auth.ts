@@ -1,6 +1,6 @@
 import crypto from "node:crypto";
 
-export const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? "sushmita2025";
+export const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD?.trim() || "sushmita2025";
 const SECRET = process.env.AUTH_SECRET ?? "sushmita-kc-portfolio-admin";
 export const AUTH_COOKIE = "sk_admin_session";
 

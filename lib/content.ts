@@ -2,48 +2,14 @@ import fs from "node:fs";
 import path from "node:path";
 import contentJson from "@/data/content.json";
 import type { SiteContent } from "./types";
+import { getGitHubFile, putGitHubFile, isGitHubEnabled } from "./github";
 
 const bundledContent = contentJson as SiteContent;
 
-const GITHUB_REPO = process.env.GITHUB_REPO;
-const GITHUB_API =
-  process.env.GITHUB_CONTENT_API ||
-  (GITHUB_REPO
-    ? `https://api.github.com/repos/${GITHUB_REPO}/contents/data/content.json`
-    : undefined);
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const GITHUB_BRANCH = process.env.GITHUB_BRANCH ?? "main";
+const CONTENT_PATH = "data/content.json";
 
-const isDevelopment = process.env.NODE_ENV === "development";
-
-function isGitHubEnabled(): boolean {
-  return Boolean(GITHUB_API && GITHUB_TOKEN && !isDevelopment);
-}
-
-async function fetchFromGitHub(): Promise<SiteContent | null> {
-  if (!GITHUB_API || !GITHUB_TOKEN) return null;
-  try {
-    const url = `${GITHUB_API}?ref=${GITHUB_BRANCH}`;
-    const res = await fetch(url, {
-      headers: {
-        Authorization: `Bearer ${GITHUB_TOKEN}`,
-        Accept: "application/vnd.github+json",
-        "Cache-Control": "no-store",
-      },
-      cache: "no-store",
-      next: { revalidate: 0 },
-    });
-    if (!res.ok) return null;
-    const data = (await res.json()) as { content?: string; encoding?: string };
-    if (!data.content) return null;
-    const decoded =
-      data.encoding === "base64"
-        ? Buffer.from(data.content, "base64").toString("utf-8")
-        : data.content;
-    return JSON.parse(decoded) as SiteContent;
-  } catch {
-    return null;
-  }
+function isGitHubAvailable(): boolean {
+  return isGitHubEnabled();
 }
 
 function readLocalFile(): SiteContent {
@@ -57,13 +23,44 @@ function readLocalFile(): SiteContent {
 }
 
 export async function getContent(): Promise<SiteContent> {
-  if (isGitHubEnabled()) {
-    const remote = await fetchFromGitHub();
-    if (remote) return remote;
+  if (isGitHubAvailable()) {
+    const file = await getGitHubFile(CONTENT_PATH);
+    if (file) {
+      try {
+        return JSON.parse(file.content) as SiteContent;
+      } catch {
+        /* fall through to local */
+      }
+    }
   }
   return readLocalFile();
 }
 
 export function getContentSync(): SiteContent {
   return readLocalFile();
+}
+
+export async function saveContent(
+  data: SiteContent
+): Promise<"github" | "local" | "failed"> {
+  if (isGitHubAvailable()) {
+    const file = await getGitHubFile(CONTENT_PATH);
+    if (file) {
+      const ok = await putGitHubFile(
+        CONTENT_PATH,
+        JSON.stringify(data, null, 2),
+        "Update site content via admin",
+        file.sha
+      );
+      if (ok) return "github";
+    }
+  }
+  try {
+    const filePath = path.join(process.cwd(), "data", "content.json");
+    fs.mkdirSync(path.dirname(filePath), { recursive: true });
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf-8");
+    return "local";
+  } catch {
+    return "failed";
+  }
 }

@@ -11,7 +11,7 @@ export async function GET() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   return NextResponse.json(
-    { submissions: readSubmissions() },
+    { submissions: await readSubmissions() },
     { headers: { "Cache-Control": "no-store, max-age=0" } }
   );
 }
@@ -25,7 +25,7 @@ export async function DELETE(req: NextRequest) {
   if (!id) {
     return NextResponse.json({ error: "Missing id" }, { status: 400 });
   }
-  const removed = deleteSubmission(id);
+  const removed = await deleteSubmission(id);
   return NextResponse.json(
     { ok: removed },
     { headers: { "Cache-Control": "no-store, max-age=0" } }

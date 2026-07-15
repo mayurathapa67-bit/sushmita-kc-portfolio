@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     if (!email || !isValidEmail(email)) {
       return NextResponse.json({ error: "Valid email required" }, { status: 400 });
     }
-    appendSubmission({
+    await appendSubmission({
       name: name || "Newsletter",
       email,
       message: "",
@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
   }
 
-  appendSubmission({
+  await appendSubmission({
     name,
     email,
     message,
