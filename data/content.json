@@ -838,22 +838,22 @@
     "socials": [
       {
         "platform": "LinkedIn",
-        "url": "https://linkedin.com/in/sushmita-kc",
+        "url": "",
         "icon": "linkedin"
       },
       {
         "platform": "Instagram",
-        "url": "https://instagram.com/sushmita.kc",
+        "url": "https://www.instagram.com/",
         "icon": "instagram"
       },
       {
         "platform": "Twitter",
-        "url": "https://twitter.com/sushmita_kc",
+        "url": "",
         "icon": "twitter"
       },
       {
         "platform": "Email",
-        "url": "mailto:kcsusmita.australia@gmail.com",
+        "url": "kcsushmita.australia@gmail.com",
         "icon": "mail"
       }
     ]
